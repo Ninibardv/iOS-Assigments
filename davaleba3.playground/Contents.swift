@@ -46,7 +46,7 @@ let nums = [12, 21, 25, 31, 52, 62, 78]
 
 let evenNumbers = nums.filter { nums in
     return nums % 2 == 0
-    //return nums % 2 !=
+    //return nums % 2 != 0 - თუ კენტი გვინდოდა, ვერ მივხვდი პირობაში რომელს ითხოვთ, ამიტომ ყოველი შემთხვევისთვის :დდდ
 }
 
 print("\(evenNumbers)")
