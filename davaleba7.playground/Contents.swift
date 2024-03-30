@@ -82,37 +82,37 @@ class Company {
     }
     
     func companyInfo() -> String {
-        return "\(name)-ს ყავს \(teams.count) გუნდი."
+        return "\(name)-ს ჰყავს \(teams.count) გუნდი."
     }
 }
 
 //ინსტანსები
 var company: Company? = Company(name: "ყველაზე მაგარი კომპანია")                //Strong
 var development: Team? = Team(name: "იოს დეველოპერები", company: company!)
-var john: Staff? = Staff(name: "მამლაყინწა")
-var jane: Staff? = Staff(name: "ვარსზქენი")
-var managerA: Manager? = Manager(name: "უძერსკესი მენეჯერი")
+var მამლაყინწა: Staff? = Staff(name: "მამლაყინწა")
+var შუშანიკი: Staff? = Staff(name: "შუშანიკი")
+var უძერსკესიმენეჯერი: Manager? = Manager(name: "უძერსკესი მენეჯერი")
 
 //ციკლური რეფერენსები
-john?.team = development
-jane?.team = development
-managerA?.team = development
-development?.members.append(john!)
-development?.members.append(jane!)
-development?.members.append(managerA!)
+მამლაყინწა?.team = development
+შუშანიკი?.team = development
+უძერსკესიმენეჯერი?.team = development
+development?.members.append(მამლაყინწა!)
+development?.members.append(შუშანიკი!)
+development?.members.append(უძერსკესიმენეჯერი!)
 
 //ქლოჟერი გაწყვეტა
-john?.onDeinit = { [weak john] in
-    guard let john = john else { return }
-    print("\(john.name) is being deinitialized.")
+მამლაყინწა?.onDeinit = { [weak მამლაყინწა] in
+    guard let მამლაყინწა = მამლაყინწა else { return }
+    print("\(მამლაყინწა.name) is being deinitialized.")
 }
-jane?.onDeinit = { [weak jane] in
-    guard let jane = jane else { return }
-    print("\(jane.name) is being deinitialized.")
+შუშანიკი?.onDeinit = { [weak შუშანიკი] in
+    guard let შუშანიკი = შუშანიკი else { return }
+    print("\(შუშანიკი.name) is being deinitialized.")
 }
-managerA?.onDeinit = { [weak managerA] in
-    guard let managerA = managerA else { return }
-    print("\(managerA.name) is being deinitialized.")
+უძერსკესიმენეჯერი?.onDeinit = { [weak უძერსკესიმენეჯერი] in
+    guard let უძერსკესიმენეჯერი = უძერსკესიმენეჯერი else { return }
+    print("\(უძერსკესიმენეჯერი.name) is being deinitialized.")
 }
 development?.company.onDeinit = { [weak company] in
     guard let company = company else { return }
@@ -127,8 +127,8 @@ print(development!.teamInfo())
 print(company!.companyInfo())
 
 //გაწყდააა
-john = nil
-jane = nil
-managerA = nil
+მამლაყინწა = nil
+შუშანიკი = nil
+უძერსკესიმენეჯერი = nil
 development = nil
 company = nil
