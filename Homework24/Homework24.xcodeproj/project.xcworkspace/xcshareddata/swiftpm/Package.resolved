@@ -1,0 +1,15 @@
+{
+  "originHash" : "59d49b3dda81c65281591d18170dfc07b484781a2821389ef99615b1c4cc3a59",
+  "pins" : [
+    {
+      "identity" : "simplenetworking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Ninibardv/SimpleNetworking.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a0812f39f4cd3b5dc532b63c0a5ba778a709c227"
+      }
+    }
+  ],
+  "version" : 3
+}
